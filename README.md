@@ -3,7 +3,7 @@ The plugin uses android foreground technology to raise the priority of the progr
 
 ## Installing
 ### cordova
-`cordova plugin add cordova-plugin-appforeground`
+`$ cordova plugin add cordova-plugin-appforeground`
 
 ## API
 ### Methods
