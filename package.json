@@ -1,0 +1,30 @@
+{
+  "name": "cordova-plugin-appforeground",
+  "version": "1.0.1",
+  "description": "Let the app stay on Android for a long time",
+  "cordova": {
+    "id": "cordova-plugin-appforeground",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duanwenjian/cordova-plugin-APPForeground.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android",
+    "cordova",
+    "plugin",
+    "foreground"
+  ],
+  "author": "duanwenjian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/duanwenjian/cordova-plugin-APPForeground/issues"
+  },
+  "homepage": "https://github.com/duanwenjian/cordova-plugin-APPForeground#readme"
+}

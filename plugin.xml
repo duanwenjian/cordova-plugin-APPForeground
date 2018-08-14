@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-appforeground"
+    version="1.0.1"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0">
+    <name>APPForeground</name>
+    <js-module name="APPForeground" src="www/APPForeground.js">
+        <clobbers target="cordova.plugins.APPForeground" />
+    </js-module>
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="APPForeground">
+                <param name="ios-package" value="APPForeground" />
+            </feature>
+        </config-file>
+        <source-file src="src/ios/APPForeground.m" />
+    </platform>
+    <platform name="android">
+        <framework src="com.android.support:support-v4:26.+"/>
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="APPForeground">
+                <param name="android-package" value="cordova.plugin.APPForeground.APPForeground" />
+            </feature>
+        </config-file>
+        <config-file parent="/manifest/application" target="AndroidManifest.xml">
+            <service android:enabled="true" android:exported="false"
+                     android:name="cordova.plugin.APPForeground.serviceForeground" android:stopWithTask="true"/>
+        </config-file>
+        <config-file parent="/manifest/application" target="AndroidManifest.xml">
+            <receiver android:enabled="true" android:exported="false"
+                      android:name="cordova.plugin.APPForeground.foregroundReceiver"/>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+        <source-file src="src/android/APPForeground.java"
+            target-dir="src/cordova/plugin/APPForeground" />
+        <source-file src="src/android/serviceForeground.java"
+            target-dir="src/cordova/plugin/APPForeground" />
+        <source-file src="src/android/foregroundReceiver.java"
+            target-dir="src/cordova/plugin/APPForeground" />
+    </platform>
+</plugin>
