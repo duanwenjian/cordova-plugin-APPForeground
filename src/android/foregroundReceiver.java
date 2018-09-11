@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-import com.yourname.workshop.MainActivity;
 
 import java.util.List;
 
@@ -23,7 +22,8 @@ public class foregroundReceiver extends BroadcastReceiver {
                 if (isAppAlive(context, APP_NAME)) {
                     // TODO: This method is called when the BroadcastReceiver is receiving
                     Log.i("foregroundReceiver", "the app process is alive");
-                    Intent mainIntent = new Intent(context, MainActivity.class);
+//                    Intent mainIntent = new Intent(context, MainActivity.class);
+                    Intent mainIntent = new Intent(context, context.getPackageManager().getLaunchIntentForPackage(context.getPackageName()).getComponent().getClass());
                     mainIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     Intent[] intents = {mainIntent};
                     context.startActivities(intents);
